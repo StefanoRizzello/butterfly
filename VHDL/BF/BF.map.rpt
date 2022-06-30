@@ -1,0 +1,579 @@
+Analysis & Synthesis report for BF
+Wed Dec 30 21:53:51 2020
+Quartus II Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis DSP Block Usage Summary
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Parameter Settings for Inferred Entity Instance: MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|lpm_mult:Mult0
+ 12. lpm_mult Parameter Settings by Entity Instance
+ 13. Port Connectivity Checks: "MOL:MOLTIPLICATORE"
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2011 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                       ;
++------------------------------------+-----------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Wed Dec 30 21:53:51 2020         ;
+; Quartus II Version                 ; 11.0 Build 208 07/03/2011 SP 1 SJ Web Edition ;
+; Revision Name                      ; BF                                            ;
+; Top-level Entity Name              ; BF                                            ;
+; Family                             ; Cyclone II                                    ;
+; Total logic elements               ; 762                                           ;
+;     Total combinational functions  ; 483                                           ;
+;     Dedicated logic registers      ; 455                                           ;
+; Total registers                    ; 455                                           ;
+; Total pins                         ; 292                                           ;
+; Total virtual pins                 ; 0                                             ;
+; Total memory bits                  ; 0                                             ;
+; Embedded Multiplier 9-bit elements ; 7                                             ;
+; Total PLLs                         ; 0                                             ;
++------------------------------------+-----------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C35F484C6       ;                    ;
+; Top-level entity name                                                      ; BF                 ; BF                 ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                      ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------+
+; ../SUM/SUM.vhd                   ; yes             ; User VHDL File               ; C:/Users/Utente.000/Desktop/Progetto Zamboni/SUM/SUM.vhd          ;
+; ../SUM/SUB_ADDER.vhd             ; yes             ; User VHDL File               ; C:/Users/Utente.000/Desktop/Progetto Zamboni/SUM/SUB_ADDER.vhd    ;
+; ../SUM/REG_SUM.vhd               ; yes             ; User VHDL File               ; C:/Users/Utente.000/Desktop/Progetto Zamboni/SUM/REG_SUM.vhd      ;
+; ../MOL/REG_MOL.vhd               ; yes             ; User VHDL File               ; C:/Users/Utente.000/Desktop/Progetto Zamboni/MOL/REG_MOL.vhd      ;
+; ../MOL/MOLTI.vhd                 ; yes             ; User VHDL File               ; C:/Users/Utente.000/Desktop/Progetto Zamboni/MOL/MOLTI.vhd        ;
+; ../MOL/MOL.vhd                   ; yes             ; User VHDL File               ; C:/Users/Utente.000/Desktop/Progetto Zamboni/MOL/MOL.vhd          ;
+; ../RF/RF.vhd                     ; yes             ; User VHDL File               ; C:/Users/Utente.000/Desktop/Progetto Zamboni/RF/RF.vhd            ;
+; ../RF/REG_BF_W.vhd               ; yes             ; User VHDL File               ; C:/Users/Utente.000/Desktop/Progetto Zamboni/RF/REG_BF_W.vhd      ;
+; ../RF/REG_BF_AB.vhd              ; yes             ; User VHDL File               ; C:/Users/Utente.000/Desktop/Progetto Zamboni/RF/REG_BF_AB.vhd     ;
+; ../RF/MUX_20to1_RF.vhd           ; yes             ; User VHDL File               ; C:/Users/Utente.000/Desktop/Progetto Zamboni/RF/MUX_20to1_RF.vhd  ;
+; ../RF/MUX_4_RF.vhd               ; yes             ; User VHDL File               ; C:/Users/Utente.000/Desktop/Progetto Zamboni/RF/MUX_4_RF.vhd      ;
+; REG_A1R.vhd                      ; yes             ; User VHDL File               ; C:/Users/Utente.000/Desktop/Progetto Zamboni/BF/REG_A1R.vhd       ;
+; REG_A1I.vhd                      ; yes             ; User VHDL File               ; C:/Users/Utente.000/Desktop/Progetto Zamboni/BF/REG_A1I.vhd       ;
+; REG_B1R.vhd                      ; yes             ; User VHDL File               ; C:/Users/Utente.000/Desktop/Progetto Zamboni/BF/REG_B1R.vhd       ;
+; REG_B1I.vhd                      ; yes             ; User VHDL File               ; C:/Users/Utente.000/Desktop/Progetto Zamboni/BF/REG_B1I.vhd       ;
+; REG_ROUND.vhd                    ; yes             ; User VHDL File               ; C:/Users/Utente.000/Desktop/Progetto Zamboni/BF/REG_ROUND.vhd     ;
+; MUX39SUM.vhd                     ; yes             ; User VHDL File               ; C:/Users/Utente.000/Desktop/Progetto Zamboni/BF/MUX39SUM.vhd      ;
+; REG_39.vhd                       ; yes             ; User VHDL File               ; C:/Users/Utente.000/Desktop/Progetto Zamboni/BF/REG_39.vhd        ;
+; BF.vhd                           ; yes             ; User VHDL File               ; C:/Users/Utente.000/Desktop/Progetto Zamboni/BF/BF.vhd            ;
+; ROUNDING.vhd                     ; yes             ; User VHDL File               ; C:/Users/Utente.000/Desktop/Progetto Zamboni/BF/ROUNDING.vhd      ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                 ; c:/altera/11.0sp1/quartus/libraries/megafunctions/lpm_mult.tdf    ;
+; aglobal110.inc                   ; yes             ; Megafunction                 ; c:/altera/11.0sp1/quartus/libraries/megafunctions/aglobal110.inc  ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                 ; c:/altera/11.0sp1/quartus/libraries/megafunctions/lpm_add_sub.inc ;
+; multcore.inc                     ; yes             ; Megafunction                 ; c:/altera/11.0sp1/quartus/libraries/megafunctions/multcore.inc    ;
+; bypassff.inc                     ; yes             ; Megafunction                 ; c:/altera/11.0sp1/quartus/libraries/megafunctions/bypassff.inc    ;
+; altshift.inc                     ; yes             ; Megafunction                 ; c:/altera/11.0sp1/quartus/libraries/megafunctions/altshift.inc    ;
+; db/mult_61t.tdf                  ; yes             ; Auto-Generated Megafunction  ; C:/Users/Utente.000/Desktop/Progetto Zamboni/BF/db/mult_61t.tdf   ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 762   ;
+;                                             ;       ;
+; Total combinational functions               ; 483   ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 138   ;
+;     -- 3 input functions                    ; 234   ;
+;     -- <=2 input functions                  ; 111   ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 344   ;
+;     -- arithmetic mode                      ; 139   ;
+;                                             ;       ;
+; Total registers                             ; 455   ;
+;     -- Dedicated logic registers            ; 455   ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 292   ;
+; Embedded Multiplier 9-bit elements          ; 7     ;
+; Maximum fan-out node                        ; CLK   ;
+; Maximum fan-out                             ; 377   ;
+; Total fan-out                               ; 2809  ;
+; Average fan-out                             ; 2.27  ;
++---------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                   ;
++---------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node            ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                ; Library Name ;
++---------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------+--------------+
+; |BF                                   ; 483 (1)           ; 455 (0)      ; 0           ; 7            ; 1       ; 3         ; 292  ; 0            ; |BF                                                                                ;              ;
+;    |MOL:MOLTIPLICATORE|               ; 142 (0)           ; 78 (0)       ; 0           ; 7            ; 1       ; 3         ; 0    ; 0            ; |BF|MOL:MOLTIPLICATORE                                                             ;              ;
+;       |MOLTI:moltiplicatore|          ; 142 (98)          ; 39 (39)      ; 0           ; 7            ; 1       ; 3         ; 0    ; 0            ; |BF|MOL:MOLTIPLICATORE|MOLTI:moltiplicatore                                        ;              ;
+;          |lpm_mult:Mult0|             ; 44 (0)            ; 0 (0)        ; 0           ; 7            ; 1       ; 3         ; 0    ; 0            ; |BF|MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|lpm_mult:Mult0                         ;              ;
+;             |mult_61t:auto_generated| ; 44 (44)           ; 0 (0)        ; 0           ; 7            ; 1       ; 3         ; 0    ; 0            ; |BF|MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|lpm_mult:Mult0|mult_61t:auto_generated ;              ;
+;       |REG_MOL:reg|                   ; 0 (0)             ; 39 (39)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BF|MOL:MOLTIPLICATORE|REG_MOL:reg                                                 ;              ;
+;    |MUX39SUM:MUXSUM|                  ; 59 (59)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BF|MUX39SUM:MUXSUM                                                                ;              ;
+;    |REG_39:REG_MOL|                   ; 0 (0)             ; 39 (39)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BF|REG_39:REG_MOL                                                                 ;              ;
+;    |REG_39:REG_SUM|                   ; 0 (0)             ; 39 (39)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BF|REG_39:REG_SUM                                                                 ;              ;
+;    |REG_A1I:R_A1I|                    ; 0 (0)             ; 20 (20)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BF|REG_A1I:R_A1I                                                                  ;              ;
+;    |REG_A1R:R_A1R|                    ; 1 (1)             ; 20 (20)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BF|REG_A1R:R_A1R                                                                  ;              ;
+;    |REG_B1I:R_B1I|                    ; 0 (0)             ; 20 (20)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BF|REG_B1I:R_B1I                                                                  ;              ;
+;    |REG_B1R:R_B1R|                    ; 3 (3)             ; 20 (20)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BF|REG_B1R:R_B1R                                                                  ;              ;
+;    |REG_ROUND:R_ROUNDING|             ; 0 (0)             ; 21 (21)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BF|REG_ROUND:R_ROUNDING                                                           ;              ;
+;    |RF:REG_RF|                        ; 60 (0)            ; 120 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BF|RF:REG_RF                                                                      ;              ;
+;       |MUX_20to1_RF:MUX_3W|           ; 20 (20)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BF|RF:REG_RF|MUX_20to1_RF:MUX_3W                                                  ;              ;
+;       |MUX_4_RF:MUX_2BA|              ; 40 (40)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BF|RF:REG_RF|MUX_4_RF:MUX_2BA                                                     ;              ;
+;       |REG_BF_AB:R_AI|                ; 0 (0)             ; 20 (20)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BF|RF:REG_RF|REG_BF_AB:R_AI                                                       ;              ;
+;       |REG_BF_AB:R_AR|                ; 0 (0)             ; 20 (20)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BF|RF:REG_RF|REG_BF_AB:R_AR                                                       ;              ;
+;       |REG_BF_AB:R_BI|                ; 0 (0)             ; 20 (20)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BF|RF:REG_RF|REG_BF_AB:R_BI                                                       ;              ;
+;       |REG_BF_AB:R_BR|                ; 0 (0)             ; 20 (20)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BF|RF:REG_RF|REG_BF_AB:R_BR                                                       ;              ;
+;       |REG_BF_W:R_WI|                 ; 0 (0)             ; 20 (20)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BF|RF:REG_RF|REG_BF_W:R_WI                                                        ;              ;
+;       |REG_BF_W:R_WR|                 ; 0 (0)             ; 20 (20)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BF|RF:REG_RF|REG_BF_W:R_WR                                                        ;              ;
+;    |ROUNDING:ROUND|                   ; 22 (22)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BF|ROUNDING:ROUND                                                                 ;              ;
+;    |SUM:SOMMATORE|                    ; 195 (0)           ; 78 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BF|SUM:SOMMATORE                                                                  ;              ;
+;       |REG_SUM:REG|                   ; 0 (0)             ; 39 (39)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BF|SUM:SOMMATORE|REG_SUM:REG                                                      ;              ;
+;       |SUB_ADDER:SOMMATORE|           ; 195 (195)         ; 39 (39)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |BF|SUM:SOMMATORE|SUB_ADDER:SOMMATORE                                              ;              ;
++---------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis DSP Block Usage Summary        ;
++---------------------------------------+-------------+
+; Statistic                             ; Number Used ;
++---------------------------------------+-------------+
+; Simple Multipliers (9-bit)            ; 1           ;
+; Simple Multipliers (18-bit)           ; 3           ;
+; Embedded Multiplier Blocks            ; --          ;
+; Embedded Multiplier 9-bit elements    ; 7           ;
+; Signed Embedded Multipliers           ; 1           ;
+; Unsigned Embedded Multipliers         ; 1           ;
+; Mixed Sign Embedded Multipliers       ; 2           ;
+; Variable Sign Embedded Multipliers    ; 0           ;
+; Dedicated Input Shift Register Chains ; 0           ;
++---------------------------------------+-------------+
+Note: number of Embedded Multiplier Blocks used is only available after a successful fit.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 455   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 78    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 181   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+-------------------------------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered                          ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+-------------------------------------+----------------------------+
+; 4:1                ; 20 bits   ; 40 LEs        ; 40 LEs               ; 0 LEs                  ; |BF|RF:REG_RF|MUX_4_RF:MUX_2BA|Mux2 ;                            ;
+; 3:1                ; 19 bits   ; 38 LEs        ; 38 LEs               ; 0 LEs                  ; |BF|MUX39SUM:MUXSUM|Selector37      ;                            ;
++--------------------+-----------+---------------+----------------------+------------------------+-------------------------------------+----------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|lpm_mult:Mult0 ;
++------------------------------------------------+------------+-------------------------------------------+
+; Parameter Name                                 ; Value      ; Type                                      ;
++------------------------------------------------+------------+-------------------------------------------+
+; AUTO_CARRY_CHAINS                              ; ON         ; AUTO_CARRY                                ;
+; IGNORE_CARRY_BUFFERS                           ; OFF        ; IGNORE_CARRY                              ;
+; AUTO_CASCADE_CHAINS                            ; ON         ; AUTO_CASCADE                              ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF        ; IGNORE_CASCADE                            ;
+; LPM_WIDTHA                                     ; 20         ; Untyped                                   ;
+; LPM_WIDTHB                                     ; 20         ; Untyped                                   ;
+; LPM_WIDTHP                                     ; 40         ; Untyped                                   ;
+; LPM_WIDTHR                                     ; 40         ; Untyped                                   ;
+; LPM_WIDTHS                                     ; 1          ; Untyped                                   ;
+; LPM_REPRESENTATION                             ; SIGNED     ; Untyped                                   ;
+; LPM_PIPELINE                                   ; 0          ; Untyped                                   ;
+; LATENCY                                        ; 0          ; Untyped                                   ;
+; INPUT_A_IS_CONSTANT                            ; NO         ; Untyped                                   ;
+; INPUT_B_IS_CONSTANT                            ; NO         ; Untyped                                   ;
+; USE_EAB                                        ; OFF        ; Untyped                                   ;
+; MAXIMIZE_SPEED                                 ; 5          ; Untyped                                   ;
+; DEVICE_FAMILY                                  ; Cyclone II ; Untyped                                   ;
+; CARRY_CHAIN                                    ; MANUAL     ; Untyped                                   ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT        ; TECH_MAPPER_APEX20K                       ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO       ; Untyped                                   ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0          ; Untyped                                   ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0          ; Untyped                                   ;
+; CBXI_PARAMETER                                 ; mult_61t   ; Untyped                                   ;
+; INPUT_A_FIXED_VALUE                            ; Bx         ; Untyped                                   ;
+; INPUT_B_FIXED_VALUE                            ; Bx         ; Untyped                                   ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF        ; Untyped                                   ;
++------------------------------------------------+------------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                                                 ;
++---------------------------------------+--------------------------------------------------------+
+; Name                                  ; Value                                                  ;
++---------------------------------------+--------------------------------------------------------+
+; Number of entity instances            ; 1                                                      ;
+; Entity Instance                       ; MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|lpm_mult:Mult0 ;
+;     -- LPM_WIDTHA                     ; 20                                                     ;
+;     -- LPM_WIDTHB                     ; 20                                                     ;
+;     -- LPM_WIDTHP                     ; 40                                                     ;
+;     -- LPM_REPRESENTATION             ; SIGNED                                                 ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                                                     ;
+;     -- INPUT_B_IS_CONSTANT            ; NO                                                     ;
+;     -- USE_EAB                        ; OFF                                                    ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                                                   ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                                                     ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                                                     ;
++---------------------------------------+--------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "MOL:MOLTIPLICATORE"                                                                      ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; result[0] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
+    Info: Processing started: Wed Dec 30 21:53:45 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off BF -c BF
+Warning: Parallel compilation is not licensed and has been disabled
+Info: Found 2 design units, including 1 entities, in source file /users/utente.000/desktop/progetto zamboni/sum/sum.vhd
+    Info: Found design unit 1: SUM-behav
+    Info: Found entity 1: SUM
+Info: Found 2 design units, including 1 entities, in source file /users/utente.000/desktop/progetto zamboni/sum/sub_adder.vhd
+    Info: Found design unit 1: SUB_ADDER-behav
+    Info: Found entity 1: SUB_ADDER
+Info: Found 2 design units, including 1 entities, in source file /users/utente.000/desktop/progetto zamboni/sum/reg_sum.vhd
+    Info: Found design unit 1: REG_SUM-behav
+    Info: Found entity 1: REG_SUM
+Info: Found 2 design units, including 1 entities, in source file /users/utente.000/desktop/progetto zamboni/mol/reg_mol.vhd
+    Info: Found design unit 1: REG_MOL-behav
+    Info: Found entity 1: REG_MOL
+Info: Found 2 design units, including 1 entities, in source file /users/utente.000/desktop/progetto zamboni/mol/molti.vhd
+    Info: Found design unit 1: MOLTI-behav
+    Info: Found entity 1: MOLTI
+Info: Found 2 design units, including 1 entities, in source file /users/utente.000/desktop/progetto zamboni/mol/mol.vhd
+    Info: Found design unit 1: MOL-behav
+    Info: Found entity 1: MOL
+Info: Found 2 design units, including 1 entities, in source file /users/utente.000/desktop/progetto zamboni/rf/rf.vhd
+    Info: Found design unit 1: RF-BEHAV
+    Info: Found entity 1: RF
+Info: Found 2 design units, including 1 entities, in source file /users/utente.000/desktop/progetto zamboni/rf/reg_bf_w.vhd
+    Info: Found design unit 1: REG_BF_W-behav
+    Info: Found entity 1: REG_BF_W
+Info: Found 2 design units, including 1 entities, in source file /users/utente.000/desktop/progetto zamboni/rf/reg_bf_ab.vhd
+    Info: Found design unit 1: REG_BF_AB-behav
+    Info: Found entity 1: REG_BF_AB
+Info: Found 2 design units, including 1 entities, in source file /users/utente.000/desktop/progetto zamboni/rf/mux_20to1_rf.vhd
+    Info: Found design unit 1: MUX_20to1_RF-behav
+    Info: Found entity 1: MUX_20to1_RF
+Info: Found 2 design units, including 1 entities, in source file /users/utente.000/desktop/progetto zamboni/rf/mux_4_rf.vhd
+    Info: Found design unit 1: MUX_4_RF-behav
+    Info: Found entity 1: MUX_4_RF
+Info: Found 2 design units, including 1 entities, in source file reg_a1r.vhd
+    Info: Found design unit 1: REG_A1R-behav
+    Info: Found entity 1: REG_A1R
+Info: Found 2 design units, including 1 entities, in source file reg_a1i.vhd
+    Info: Found design unit 1: REG_A1I-behav
+    Info: Found entity 1: REG_A1I
+Info: Found 2 design units, including 1 entities, in source file reg_b1r.vhd
+    Info: Found design unit 1: REG_B1R-behav
+    Info: Found entity 1: REG_B1R
+Info: Found 2 design units, including 1 entities, in source file reg_b1i.vhd
+    Info: Found design unit 1: REG_B1I-behav
+    Info: Found entity 1: REG_B1I
+Info: Found 2 design units, including 1 entities, in source file reg_round.vhd
+    Info: Found design unit 1: REG_ROUND-behav
+    Info: Found entity 1: REG_ROUND
+Info: Found 2 design units, including 1 entities, in source file mux39sum.vhd
+    Info: Found design unit 1: MUX39SUM-behav
+    Info: Found entity 1: MUX39SUM
+Info: Found 2 design units, including 1 entities, in source file reg_39.vhd
+    Info: Found design unit 1: REG_39-behav
+    Info: Found entity 1: REG_39
+Info: Found 2 design units, including 1 entities, in source file bf.vhd
+    Info: Found design unit 1: BF-BEHAV
+    Info: Found entity 1: BF
+Info: Found 2 design units, including 1 entities, in source file rounding.vhd
+    Info: Found design unit 1: ROUNDING-behav
+    Info: Found entity 1: ROUNDING
+Info: Elaborating entity "BF" for the top level hierarchy
+Critical Warning (10920): VHDL Incomplete Partial Association warning at BF.vhd(100): port or argument "RESULT" has 1/40 unassociated elements
+Info: Elaborating entity "ROUNDING" for hierarchy "ROUNDING:ROUND"
+Info: Elaborating entity "MUX39SUM" for hierarchy "MUX39SUM:MUXSUM"
+Info: Elaborating entity "RF" for hierarchy "RF:REG_RF"
+Info: Elaborating entity "MUX_4_RF" for hierarchy "RF:REG_RF|MUX_4_RF:MUX_2BA"
+Info: Elaborating entity "MUX_20to1_RF" for hierarchy "RF:REG_RF|MUX_20to1_RF:MUX_3W"
+Info: Elaborating entity "REG_BF_AB" for hierarchy "RF:REG_RF|REG_BF_AB:R_AR"
+Info: Elaborating entity "REG_BF_W" for hierarchy "RF:REG_RF|REG_BF_W:R_WR"
+Info: Elaborating entity "MOL" for hierarchy "MOL:MOLTIPLICATORE"
+Info: Elaborating entity "MOLTI" for hierarchy "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore"
+Warning (10492): VHDL Process Statement warning at MOLTI.vhd(24): signal "ADD1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info: Elaborating entity "REG_MOL" for hierarchy "MOL:MOLTIPLICATORE|REG_MOL:reg"
+Info: Elaborating entity "SUM" for hierarchy "SUM:SOMMATORE"
+Info: Elaborating entity "SUB_ADDER" for hierarchy "SUM:SOMMATORE|SUB_ADDER:SOMMATORE"
+Warning (10492): VHDL Process Statement warning at SUB_ADDER.vhd(24): signal "T1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at SUB_ADDER.vhd(24): signal "T2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info: Elaborating entity "REG_SUM" for hierarchy "SUM:SOMMATORE|REG_SUM:REG"
+Info: Elaborating entity "REG_39" for hierarchy "REG_39:REG_MOL"
+Info: Elaborating entity "REG_ROUND" for hierarchy "REG_ROUND:R_ROUNDING"
+Info: Elaborating entity "REG_A1R" for hierarchy "REG_A1R:R_A1R"
+Info: Elaborating entity "REG_A1I" for hierarchy "REG_A1I:R_A1I"
+Info: Elaborating entity "REG_B1R" for hierarchy "REG_B1R:R_B1R"
+Info: Elaborating entity "REG_B1I" for hierarchy "REG_B1I:R_B1I"
+Info: Inferred 1 megafunctions from design logic
+    Info: Inferred multiplier megafunction ("lpm_mult") from the following logic: "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|Mult0"
+Info: Elaborated megafunction instantiation "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|lpm_mult:Mult0"
+Info: Instantiated megafunction "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|lpm_mult:Mult0" with the following parameter:
+    Info: Parameter "LPM_WIDTHA" = "20"
+    Info: Parameter "LPM_WIDTHB" = "20"
+    Info: Parameter "LPM_WIDTHP" = "40"
+    Info: Parameter "LPM_WIDTHR" = "40"
+    Info: Parameter "LPM_WIDTHS" = "1"
+    Info: Parameter "LPM_REPRESENTATION" = "SIGNED"
+    Info: Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info: Parameter "INPUT_B_IS_CONSTANT" = "NO"
+    Info: Parameter "MAXIMIZE_SPEED" = "5"
+Info: Found 1 design units, including 1 entities, in source file db/mult_61t.tdf
+    Info: Found entity 1: mult_61t
+Info: Ignored 127 buffer(s)
+    Info: Ignored 127 SOFT buffer(s)
+Warning: Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
+    Warning (13310): Register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[20]" is converted into an equivalent circuit using register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[20]~_emulated" and latch "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[20]~latch"
+    Warning (13310): Register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[19]" is converted into an equivalent circuit using register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[19]~_emulated" and latch "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[19]~latch"
+    Warning (13310): Register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[18]" is converted into an equivalent circuit using register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[18]~_emulated" and latch "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[18]~latch"
+    Warning (13310): Register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[21]" is converted into an equivalent circuit using register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[21]~_emulated" and latch "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[21]~latch"
+    Warning (13310): Register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[22]" is converted into an equivalent circuit using register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[22]~_emulated" and latch "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[22]~latch"
+    Warning (13310): Register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[23]" is converted into an equivalent circuit using register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[23]~_emulated" and latch "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[23]~latch"
+    Warning (13310): Register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[24]" is converted into an equivalent circuit using register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[24]~_emulated" and latch "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[24]~latch"
+    Warning (13310): Register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[25]" is converted into an equivalent circuit using register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[25]~_emulated" and latch "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[25]~latch"
+    Warning (13310): Register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[26]" is converted into an equivalent circuit using register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[26]~_emulated" and latch "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[26]~latch"
+    Warning (13310): Register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[27]" is converted into an equivalent circuit using register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[27]~_emulated" and latch "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[27]~latch"
+    Warning (13310): Register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[28]" is converted into an equivalent circuit using register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[28]~_emulated" and latch "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[28]~latch"
+    Warning (13310): Register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[29]" is converted into an equivalent circuit using register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[29]~_emulated" and latch "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[29]~latch"
+    Warning (13310): Register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[30]" is converted into an equivalent circuit using register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[30]~_emulated" and latch "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[30]~latch"
+    Warning (13310): Register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[31]" is converted into an equivalent circuit using register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[31]~_emulated" and latch "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[31]~latch"
+    Warning (13310): Register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[32]" is converted into an equivalent circuit using register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[32]~_emulated" and latch "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[32]~latch"
+    Warning (13310): Register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[33]" is converted into an equivalent circuit using register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[33]~_emulated" and latch "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[33]~latch"
+    Warning (13310): Register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[34]" is converted into an equivalent circuit using register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[34]~_emulated" and latch "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[34]~latch"
+    Warning (13310): Register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[35]" is converted into an equivalent circuit using register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[35]~_emulated" and latch "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[35]~latch"
+    Warning (13310): Register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[36]" is converted into an equivalent circuit using register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[36]~_emulated" and latch "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[36]~latch"
+    Warning (13310): Register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[37]" is converted into an equivalent circuit using register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[37]~_emulated" and latch "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[37]~latch"
+    Warning (13310): Register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[38]" is converted into an equivalent circuit using register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[38]~_emulated" and latch "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[38]~latch"
+    Warning (13310): Register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[21]" is converted into an equivalent circuit using register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[21]~_emulated" and latch "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[21]~latch"
+    Warning (13310): Register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[20]" is converted into an equivalent circuit using register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[20]~_emulated" and latch "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[21]~latch"
+    Warning (13310): Register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[19]" is converted into an equivalent circuit using register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[19]~_emulated" and latch "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[19]~latch"
+    Warning (13310): Register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[17]" is converted into an equivalent circuit using register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[17]~_emulated" and latch "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[17]~latch"
+    Warning (13310): Register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[18]" is converted into an equivalent circuit using register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[18]~_emulated" and latch "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[18]~latch"
+    Warning (13310): Register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[16]" is converted into an equivalent circuit using register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[16]~_emulated" and latch "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[16]~latch"
+    Warning (13310): Register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[17]" is converted into an equivalent circuit using register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[17]~_emulated" and latch "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[17]~latch"
+    Warning (13310): Register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[15]" is converted into an equivalent circuit using register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[15]~_emulated" and latch "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[15]~latch"
+    Warning (13310): Register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[16]" is converted into an equivalent circuit using register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[16]~_emulated" and latch "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[16]~latch"
+    Warning (13310): Register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[14]" is converted into an equivalent circuit using register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[14]~_emulated" and latch "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[14]~latch"
+    Warning (13310): Register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[15]" is converted into an equivalent circuit using register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[15]~_emulated" and latch "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[15]~latch"
+    Warning (13310): Register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[13]" is converted into an equivalent circuit using register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[13]~_emulated" and latch "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[13]~latch"
+    Warning (13310): Register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[14]" is converted into an equivalent circuit using register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[14]~_emulated" and latch "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[14]~latch"
+    Warning (13310): Register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[12]" is converted into an equivalent circuit using register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[12]~_emulated" and latch "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[12]~latch"
+    Warning (13310): Register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[13]" is converted into an equivalent circuit using register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[13]~_emulated" and latch "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[13]~latch"
+    Warning (13310): Register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[11]" is converted into an equivalent circuit using register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[11]~_emulated" and latch "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[11]~latch"
+    Warning (13310): Register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[12]" is converted into an equivalent circuit using register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[12]~_emulated" and latch "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[12]~latch"
+    Warning (13310): Register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[10]" is converted into an equivalent circuit using register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[10]~_emulated" and latch "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[10]~latch"
+    Warning (13310): Register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[11]" is converted into an equivalent circuit using register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[11]~_emulated" and latch "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[11]~latch"
+    Warning (13310): Register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[9]" is converted into an equivalent circuit using register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[9]~_emulated" and latch "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[9]~latch"
+    Warning (13310): Register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[10]" is converted into an equivalent circuit using register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[10]~_emulated" and latch "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[10]~latch"
+    Warning (13310): Register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[8]" is converted into an equivalent circuit using register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[8]~_emulated" and latch "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[8]~latch"
+    Warning (13310): Register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[9]" is converted into an equivalent circuit using register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[9]~_emulated" and latch "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[9]~latch"
+    Warning (13310): Register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[7]" is converted into an equivalent circuit using register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[7]~_emulated" and latch "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[7]~latch"
+    Warning (13310): Register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[8]" is converted into an equivalent circuit using register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[8]~_emulated" and latch "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[8]~latch"
+    Warning (13310): Register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[6]" is converted into an equivalent circuit using register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[6]~_emulated" and latch "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[6]~latch"
+    Warning (13310): Register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[7]" is converted into an equivalent circuit using register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[7]~_emulated" and latch "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[7]~latch"
+    Warning (13310): Register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[5]" is converted into an equivalent circuit using register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[5]~_emulated" and latch "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[5]~latch"
+    Warning (13310): Register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[6]" is converted into an equivalent circuit using register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[6]~_emulated" and latch "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[6]~latch"
+    Warning (13310): Register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[4]" is converted into an equivalent circuit using register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[4]~_emulated" and latch "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[4]~latch"
+    Warning (13310): Register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[5]" is converted into an equivalent circuit using register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[5]~_emulated" and latch "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[5]~latch"
+    Warning (13310): Register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[3]" is converted into an equivalent circuit using register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[3]~_emulated" and latch "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[3]~latch"
+    Warning (13310): Register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[4]" is converted into an equivalent circuit using register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[4]~_emulated" and latch "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[4]~latch"
+    Warning (13310): Register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[2]" is converted into an equivalent circuit using register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[2]~_emulated" and latch "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[2]~latch"
+    Warning (13310): Register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[3]" is converted into an equivalent circuit using register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[3]~_emulated" and latch "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[3]~latch"
+    Warning (13310): Register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[1]" is converted into an equivalent circuit using register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[1]~_emulated" and latch "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[1]~latch"
+    Warning (13310): Register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[2]" is converted into an equivalent circuit using register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[2]~_emulated" and latch "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[2]~latch"
+    Warning (13310): Register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[0]" is converted into an equivalent circuit using register "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[0]~_emulated" and latch "SUM:SOMMATORE|SUB_ADDER:SOMMATORE|RESULT[0]~latch"
+    Warning (13310): Register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[1]" is converted into an equivalent circuit using register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[1]~_emulated" and latch "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[1]~latch"
+    Warning (13310): Register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[22]" is converted into an equivalent circuit using register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[22]~_emulated" and latch "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[21]~latch"
+    Warning (13310): Register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[23]" is converted into an equivalent circuit using register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[23]~_emulated" and latch "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[21]~latch"
+    Warning (13310): Register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[24]" is converted into an equivalent circuit using register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[24]~_emulated" and latch "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[21]~latch"
+    Warning (13310): Register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[25]" is converted into an equivalent circuit using register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[25]~_emulated" and latch "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[21]~latch"
+    Warning (13310): Register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[26]" is converted into an equivalent circuit using register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[26]~_emulated" and latch "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[21]~latch"
+    Warning (13310): Register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[27]" is converted into an equivalent circuit using register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[27]~_emulated" and latch "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[21]~latch"
+    Warning (13310): Register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[28]" is converted into an equivalent circuit using register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[28]~_emulated" and latch "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[21]~latch"
+    Warning (13310): Register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[29]" is converted into an equivalent circuit using register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[29]~_emulated" and latch "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[21]~latch"
+    Warning (13310): Register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[30]" is converted into an equivalent circuit using register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[30]~_emulated" and latch "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[21]~latch"
+    Warning (13310): Register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[31]" is converted into an equivalent circuit using register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[31]~_emulated" and latch "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[21]~latch"
+    Warning (13310): Register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[32]" is converted into an equivalent circuit using register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[32]~_emulated" and latch "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[21]~latch"
+    Warning (13310): Register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[33]" is converted into an equivalent circuit using register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[33]~_emulated" and latch "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[21]~latch"
+    Warning (13310): Register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[34]" is converted into an equivalent circuit using register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[34]~_emulated" and latch "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[21]~latch"
+    Warning (13310): Register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[35]" is converted into an equivalent circuit using register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[35]~_emulated" and latch "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[21]~latch"
+    Warning (13310): Register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[36]" is converted into an equivalent circuit using register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[36]~_emulated" and latch "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[21]~latch"
+    Warning (13310): Register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[37]" is converted into an equivalent circuit using register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[37]~_emulated" and latch "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[21]~latch"
+    Warning (13310): Register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[38]" is converted into an equivalent circuit using register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[38]~_emulated" and latch "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[21]~latch"
+    Warning (13310): Register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[39]" is converted into an equivalent circuit using register "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[39]~_emulated" and latch "MOL:MOLTIPLICATORE|MOLTI:moltiplicatore|RESULT[21]~latch"
+Info: Generating hard_block partition "hard_block:auto_generated_inst"
+Warning: Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "SEL1"
+Info: Implemented 1081 device resources after synthesis - the final resource count might be different
+    Info: Implemented 132 input pins
+    Info: Implemented 160 output pins
+    Info: Implemented 782 logic cells
+    Info: Implemented 7 DSP elements
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 86 warnings
+    Info: Peak virtual memory: 316 megabytes
+    Info: Processing ended: Wed Dec 30 21:53:51 2020
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:05
+
+

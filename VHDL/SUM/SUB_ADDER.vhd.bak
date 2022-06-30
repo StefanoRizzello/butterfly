@@ -1,0 +1,28 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE ieee.numeric_std.all; 
+
+ENTITY SUB_ADDER IS
+
+PORT ( A_S: IN std_logic;
+       T1,T2: IN std_logic_vector(38 downto 0);
+       RESULT: OUT std_logic_vector(38 downto 0));
+END SUB_ADDER;
+
+ARCHITECTURE behav OF SUB_ADDER IS
+ 
+BEGIN 
+
+PROCESS(A/S)
+
+BEGIN 
+
+		IF (A_S = '0') THEN 
+		RESULT <= T1+T2;
+		END IF;
+		IF (A_S ='1')
+		RESULT <= T1-T2;
+		END IF;
+		END PROCESS;
+		
+END behav;

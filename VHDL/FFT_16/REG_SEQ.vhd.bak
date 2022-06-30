@@ -1,0 +1,13 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE ieee.numeric_std.all; 
+
+ENTITY FF_SEQ IS
+
+PORT (CLK,D,SET,RESET,ENABLE: IN STD_LOGIC;
+		Q: OUT STD_LOGIC);		 
+END FF_SEQ;
+
+ARCHITECTURE behav OF FF_SEQ IS
+
+BEGIN

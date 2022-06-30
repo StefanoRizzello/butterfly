@@ -1,0 +1,21 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE ieee.numeric_std.all; 
+
+ENTITY ROUNDING IS
+
+PORT ( D: IN SIGNED(38 downto 0);
+       Q: OUT SIGNED(19 downto 0));
+END ROUNDING;
+
+ARCHITECTURE behav of ROUNDING IS 
+
+SIGNAL PARTIAL: SIGNED (39 downto 0);
+SIGNAL NEW_D: SIGNED (39 downto 0);
+BEGIN 
+NEW_D(39)<=D(38);
+NEW_D(38 downto 0) <= D;
+PARTIAL<= NEW_D + "1000000000000000000";
+Q<=PARTIAL(39 DOWNTO 20);
+
+end behav;

@@ -1,0 +1,55 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE ieee.numeric_std.all; 
+
+ENTITY CU_BF IS 
+PORT( LOAD,SEQ,CLK: IN std_logic;
+		CTRL_OUT: OUT std_logic_vector(13 downto 0);
+END CU_BF;
+
+ARCHITECTURE behav OF CU_BF IS 
+
+COMPONENT MUX_20to1 IS 
+PORT( A,B: IN std_logic_vector(19 downto 0);
+		SEL : IN std_logic;
+		OUTPUT: OUT std_logic_vector(19 downto 0));
+END COMPONENT;
+
+COMPONENT REG_BF IS
+PORT ( CLK: IN std_logic;
+       D: IN std_logic_vector(19 downto 0);
+       Q: OUT std_logic_vector(19 downto 0));
+END COMPONENT;
+
+COMPONENT REG_PS_BF IS
+PORT ( CLK: IN std_logic;
+       D: IN std_logic_vector(4 downto 0);
+       Q: OUT std_logic_vector(4 downto 0));
+END COMPONENT;
+
+
+COMPONENT PLA_BF IS 
+PORT( LOAD,SEQ,LSB,CC : IN std_logic;
+		LSB_OUT: OUT std_logic);
+END COMPONENT;
+
+COMPONENT uROM is
+	generic( row : integer:= 10;
+				column : integer:= 40
+				);
+	port( M: in std_logic_vector (3 downto 0); 
+			OUT_uROM: out std_logic_vector (column-1 downto 0)
+			);
+end COMPONENT;
+
+SIGNAL add,NEXTS :std_logic_vector(3 downto 0);
+SIGNAL AS,BS,DS :std_logic_vector(19 downto 0);
+SIGNAL CCs, LSB_MP,LSB_OUTS,lsb_sel : std_logic;
+
+BEGIN 
+ROM: uROM PORT MAP (M=> add, OUT_uROM(column-1:column-19) => AS, OUT_uROM(column-20:0)=> BS);
+PLA: PLA_BF PORT MAP( LOAD=>LOAD,SEQ=>SEQ,CC=>CCs,LSB=>LSB_MP, LSB_OUT=>LSB_OUTS);
+REG_PS: REG_PS_BF PORT MAP( CLK=>CLK, D(0)=>LSB_OUTS, D(4:1)=>NEXTS,Q(4:1)=> add, Q(0)=>lsb_sel);
+REG_NEXT: REG_BF PORT MAP ( CLK=>CLK, Q(19)=>CCS,Q(18:15)=>NEXTS,Q(14)=>LSB_MP,Q(13:0)=> CTRL_OUT,D=>DS);
+MUX_20:  MUX_20to1 PORT MAP ( A=>AS,B=>BS, SEL=>lsb_sel,OUTPUT=>DS);
+END BEHAV;

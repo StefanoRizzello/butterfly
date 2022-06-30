@@ -1,0 +1,32 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE ieee.numeric_std.all; 
+
+ENTITY FF_SEQ IS
+
+PORT (CLK,D,SET,RESET,ENABLE: IN STD_LOGIC;
+		Q: OUT STD_LOGIC);		 
+END FF_SEQ;
+
+ARCHITECTURE behav OF FF_SEQ IS
+
+BEGIN
+
+PROCESS(CLK,SET,RESET,ENABLE)
+BEGIN
+
+	IF (CLK'EVENT AND CLK = '1') THEN
+		IF (ENABLE = '1') THEN 
+		Q <= D;
+		ELSE IF (SET = '1') THEN 
+		Q <= '1';
+		ELSE IF (RESET = '1') THEN
+		Q <= '0';
+		END IF;
+		END IF;
+		END IF;
+		END IF;
+	
+END PROCESS;
+
+END behav;

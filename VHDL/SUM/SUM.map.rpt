@@ -1,0 +1,304 @@
+Analysis & Synthesis report for SUM
+Wed Dec 30 16:07:41 2020
+Quartus II Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Elapsed Time Per Partition
+ 10. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2011 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                       ;
++------------------------------------+-----------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Wed Dec 30 16:07:41 2020         ;
+; Quartus II Version                 ; 11.0 Build 208 07/03/2011 SP 1 SJ Web Edition ;
+; Revision Name                      ; SUM                                           ;
+; Top-level Entity Name              ; SUM                                           ;
+; Family                             ; Cyclone II                                    ;
+; Total logic elements               ; 195                                           ;
+;     Total combinational functions  ; 195                                           ;
+;     Dedicated logic registers      ; 78                                            ;
+; Total registers                    ; 78                                            ;
+; Total pins                         ; 119                                           ;
+; Total virtual pins                 ; 0                                             ;
+; Total memory bits                  ; 0                                             ;
+; Embedded Multiplier 9-bit elements ; 0                                             ;
+; Total PLLs                         ; 0                                             ;
++------------------------------------+-----------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C35F484C6       ;                    ;
+; Top-level entity name                                                      ; SUM                ; SUM                ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 2      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                   ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------+
+; REG_SUM.vhd                      ; yes             ; User VHDL File  ; C:/Users/Utente.000/Desktop/Progetto Zamboni/SUM/REG_SUM.vhd   ;
+; SUB_ADDER.vhd                    ; yes             ; User VHDL File  ; C:/Users/Utente.000/Desktop/Progetto Zamboni/SUM/SUB_ADDER.vhd ;
+; SUM.vhd                          ; yes             ; User VHDL File  ; C:/Users/Utente.000/Desktop/Progetto Zamboni/SUM/SUM.vhd       ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 195   ;
+;                                             ;       ;
+; Total combinational functions               ; 195   ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 39    ;
+;     -- 3 input functions                    ; 115   ;
+;     -- <=2 input functions                  ; 41    ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 119   ;
+;     -- arithmetic mode                      ; 76    ;
+;                                             ;       ;
+; Total registers                             ; 78    ;
+;     -- Dedicated logic registers            ; 78    ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 119   ;
+; Maximum fan-out node                        ; A_S   ;
+; Maximum fan-out                             ; 117   ;
+; Total fan-out                               ; 778   ;
+; Average fan-out                             ; 1.98  ;
++---------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                              ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name      ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------+--------------+
+; |SUM                       ; 195 (0)           ; 78 (0)       ; 0           ; 0            ; 0       ; 0         ; 119  ; 0            ; |SUM                     ;              ;
+;    |REG_SUM:REG|           ; 0 (0)             ; 39 (39)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SUM|REG_SUM:REG         ;              ;
+;    |SUB_ADDER:SOMMATORE|   ; 195 (195)         ; 39 (39)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |SUM|SUB_ADDER:SOMMATORE ;              ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 78    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 39    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
+    Info: Processing started: Wed Dec 30 16:07:38 2020
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SUM -c SUM
+Warning: Parallel compilation is not licensed and has been disabled
+Info: Found 2 design units, including 1 entities, in source file reg_sum.vhd
+    Info: Found design unit 1: REG_SUM-behav
+    Info: Found entity 1: REG_SUM
+Info: Found 2 design units, including 1 entities, in source file sub_adder.vhd
+    Info: Found design unit 1: SUB_ADDER-behav
+    Info: Found entity 1: SUB_ADDER
+Info: Found 2 design units, including 1 entities, in source file sum.vhd
+    Info: Found design unit 1: SUM-behav
+    Info: Found entity 1: SUM
+Info: Elaborating entity "SUM" for the top level hierarchy
+Info: Elaborating entity "SUB_ADDER" for hierarchy "SUB_ADDER:SOMMATORE"
+Warning (10492): VHDL Process Statement warning at SUB_ADDER.vhd(24): signal "T1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at SUB_ADDER.vhd(24): signal "T2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Info: Elaborating entity "REG_SUM" for hierarchy "REG_SUM:REG"
+Warning: Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
+    Warning (13310): Register "SUB_ADDER:SOMMATORE|RESULT[0]" is converted into an equivalent circuit using register "SUB_ADDER:SOMMATORE|RESULT[0]~_emulated" and latch "SUB_ADDER:SOMMATORE|RESULT[0]~latch"
+    Warning (13310): Register "SUB_ADDER:SOMMATORE|RESULT[1]" is converted into an equivalent circuit using register "SUB_ADDER:SOMMATORE|RESULT[1]~_emulated" and latch "SUB_ADDER:SOMMATORE|RESULT[1]~latch"
+    Warning (13310): Register "SUB_ADDER:SOMMATORE|RESULT[2]" is converted into an equivalent circuit using register "SUB_ADDER:SOMMATORE|RESULT[2]~_emulated" and latch "SUB_ADDER:SOMMATORE|RESULT[2]~latch"
+    Warning (13310): Register "SUB_ADDER:SOMMATORE|RESULT[3]" is converted into an equivalent circuit using register "SUB_ADDER:SOMMATORE|RESULT[3]~_emulated" and latch "SUB_ADDER:SOMMATORE|RESULT[3]~latch"
+    Warning (13310): Register "SUB_ADDER:SOMMATORE|RESULT[4]" is converted into an equivalent circuit using register "SUB_ADDER:SOMMATORE|RESULT[4]~_emulated" and latch "SUB_ADDER:SOMMATORE|RESULT[4]~latch"
+    Warning (13310): Register "SUB_ADDER:SOMMATORE|RESULT[5]" is converted into an equivalent circuit using register "SUB_ADDER:SOMMATORE|RESULT[5]~_emulated" and latch "SUB_ADDER:SOMMATORE|RESULT[5]~latch"
+    Warning (13310): Register "SUB_ADDER:SOMMATORE|RESULT[6]" is converted into an equivalent circuit using register "SUB_ADDER:SOMMATORE|RESULT[6]~_emulated" and latch "SUB_ADDER:SOMMATORE|RESULT[6]~latch"
+    Warning (13310): Register "SUB_ADDER:SOMMATORE|RESULT[7]" is converted into an equivalent circuit using register "SUB_ADDER:SOMMATORE|RESULT[7]~_emulated" and latch "SUB_ADDER:SOMMATORE|RESULT[7]~latch"
+    Warning (13310): Register "SUB_ADDER:SOMMATORE|RESULT[8]" is converted into an equivalent circuit using register "SUB_ADDER:SOMMATORE|RESULT[8]~_emulated" and latch "SUB_ADDER:SOMMATORE|RESULT[8]~latch"
+    Warning (13310): Register "SUB_ADDER:SOMMATORE|RESULT[9]" is converted into an equivalent circuit using register "SUB_ADDER:SOMMATORE|RESULT[9]~_emulated" and latch "SUB_ADDER:SOMMATORE|RESULT[9]~latch"
+    Warning (13310): Register "SUB_ADDER:SOMMATORE|RESULT[10]" is converted into an equivalent circuit using register "SUB_ADDER:SOMMATORE|RESULT[10]~_emulated" and latch "SUB_ADDER:SOMMATORE|RESULT[10]~latch"
+    Warning (13310): Register "SUB_ADDER:SOMMATORE|RESULT[11]" is converted into an equivalent circuit using register "SUB_ADDER:SOMMATORE|RESULT[11]~_emulated" and latch "SUB_ADDER:SOMMATORE|RESULT[11]~latch"
+    Warning (13310): Register "SUB_ADDER:SOMMATORE|RESULT[12]" is converted into an equivalent circuit using register "SUB_ADDER:SOMMATORE|RESULT[12]~_emulated" and latch "SUB_ADDER:SOMMATORE|RESULT[12]~latch"
+    Warning (13310): Register "SUB_ADDER:SOMMATORE|RESULT[13]" is converted into an equivalent circuit using register "SUB_ADDER:SOMMATORE|RESULT[13]~_emulated" and latch "SUB_ADDER:SOMMATORE|RESULT[13]~latch"
+    Warning (13310): Register "SUB_ADDER:SOMMATORE|RESULT[14]" is converted into an equivalent circuit using register "SUB_ADDER:SOMMATORE|RESULT[14]~_emulated" and latch "SUB_ADDER:SOMMATORE|RESULT[14]~latch"
+    Warning (13310): Register "SUB_ADDER:SOMMATORE|RESULT[15]" is converted into an equivalent circuit using register "SUB_ADDER:SOMMATORE|RESULT[15]~_emulated" and latch "SUB_ADDER:SOMMATORE|RESULT[15]~latch"
+    Warning (13310): Register "SUB_ADDER:SOMMATORE|RESULT[16]" is converted into an equivalent circuit using register "SUB_ADDER:SOMMATORE|RESULT[16]~_emulated" and latch "SUB_ADDER:SOMMATORE|RESULT[16]~latch"
+    Warning (13310): Register "SUB_ADDER:SOMMATORE|RESULT[17]" is converted into an equivalent circuit using register "SUB_ADDER:SOMMATORE|RESULT[17]~_emulated" and latch "SUB_ADDER:SOMMATORE|RESULT[17]~latch"
+    Warning (13310): Register "SUB_ADDER:SOMMATORE|RESULT[18]" is converted into an equivalent circuit using register "SUB_ADDER:SOMMATORE|RESULT[18]~_emulated" and latch "SUB_ADDER:SOMMATORE|RESULT[18]~latch"
+    Warning (13310): Register "SUB_ADDER:SOMMATORE|RESULT[19]" is converted into an equivalent circuit using register "SUB_ADDER:SOMMATORE|RESULT[19]~_emulated" and latch "SUB_ADDER:SOMMATORE|RESULT[19]~latch"
+    Warning (13310): Register "SUB_ADDER:SOMMATORE|RESULT[20]" is converted into an equivalent circuit using register "SUB_ADDER:SOMMATORE|RESULT[20]~_emulated" and latch "SUB_ADDER:SOMMATORE|RESULT[20]~latch"
+    Warning (13310): Register "SUB_ADDER:SOMMATORE|RESULT[21]" is converted into an equivalent circuit using register "SUB_ADDER:SOMMATORE|RESULT[21]~_emulated" and latch "SUB_ADDER:SOMMATORE|RESULT[21]~latch"
+    Warning (13310): Register "SUB_ADDER:SOMMATORE|RESULT[22]" is converted into an equivalent circuit using register "SUB_ADDER:SOMMATORE|RESULT[22]~_emulated" and latch "SUB_ADDER:SOMMATORE|RESULT[22]~latch"
+    Warning (13310): Register "SUB_ADDER:SOMMATORE|RESULT[23]" is converted into an equivalent circuit using register "SUB_ADDER:SOMMATORE|RESULT[23]~_emulated" and latch "SUB_ADDER:SOMMATORE|RESULT[23]~latch"
+    Warning (13310): Register "SUB_ADDER:SOMMATORE|RESULT[24]" is converted into an equivalent circuit using register "SUB_ADDER:SOMMATORE|RESULT[24]~_emulated" and latch "SUB_ADDER:SOMMATORE|RESULT[24]~latch"
+    Warning (13310): Register "SUB_ADDER:SOMMATORE|RESULT[25]" is converted into an equivalent circuit using register "SUB_ADDER:SOMMATORE|RESULT[25]~_emulated" and latch "SUB_ADDER:SOMMATORE|RESULT[25]~latch"
+    Warning (13310): Register "SUB_ADDER:SOMMATORE|RESULT[26]" is converted into an equivalent circuit using register "SUB_ADDER:SOMMATORE|RESULT[26]~_emulated" and latch "SUB_ADDER:SOMMATORE|RESULT[26]~latch"
+    Warning (13310): Register "SUB_ADDER:SOMMATORE|RESULT[27]" is converted into an equivalent circuit using register "SUB_ADDER:SOMMATORE|RESULT[27]~_emulated" and latch "SUB_ADDER:SOMMATORE|RESULT[27]~latch"
+    Warning (13310): Register "SUB_ADDER:SOMMATORE|RESULT[28]" is converted into an equivalent circuit using register "SUB_ADDER:SOMMATORE|RESULT[28]~_emulated" and latch "SUB_ADDER:SOMMATORE|RESULT[28]~latch"
+    Warning (13310): Register "SUB_ADDER:SOMMATORE|RESULT[29]" is converted into an equivalent circuit using register "SUB_ADDER:SOMMATORE|RESULT[29]~_emulated" and latch "SUB_ADDER:SOMMATORE|RESULT[29]~latch"
+    Warning (13310): Register "SUB_ADDER:SOMMATORE|RESULT[30]" is converted into an equivalent circuit using register "SUB_ADDER:SOMMATORE|RESULT[30]~_emulated" and latch "SUB_ADDER:SOMMATORE|RESULT[30]~latch"
+    Warning (13310): Register "SUB_ADDER:SOMMATORE|RESULT[31]" is converted into an equivalent circuit using register "SUB_ADDER:SOMMATORE|RESULT[31]~_emulated" and latch "SUB_ADDER:SOMMATORE|RESULT[31]~latch"
+    Warning (13310): Register "SUB_ADDER:SOMMATORE|RESULT[32]" is converted into an equivalent circuit using register "SUB_ADDER:SOMMATORE|RESULT[32]~_emulated" and latch "SUB_ADDER:SOMMATORE|RESULT[32]~latch"
+    Warning (13310): Register "SUB_ADDER:SOMMATORE|RESULT[33]" is converted into an equivalent circuit using register "SUB_ADDER:SOMMATORE|RESULT[33]~_emulated" and latch "SUB_ADDER:SOMMATORE|RESULT[33]~latch"
+    Warning (13310): Register "SUB_ADDER:SOMMATORE|RESULT[34]" is converted into an equivalent circuit using register "SUB_ADDER:SOMMATORE|RESULT[34]~_emulated" and latch "SUB_ADDER:SOMMATORE|RESULT[34]~latch"
+    Warning (13310): Register "SUB_ADDER:SOMMATORE|RESULT[35]" is converted into an equivalent circuit using register "SUB_ADDER:SOMMATORE|RESULT[35]~_emulated" and latch "SUB_ADDER:SOMMATORE|RESULT[35]~latch"
+    Warning (13310): Register "SUB_ADDER:SOMMATORE|RESULT[36]" is converted into an equivalent circuit using register "SUB_ADDER:SOMMATORE|RESULT[36]~_emulated" and latch "SUB_ADDER:SOMMATORE|RESULT[36]~latch"
+    Warning (13310): Register "SUB_ADDER:SOMMATORE|RESULT[37]" is converted into an equivalent circuit using register "SUB_ADDER:SOMMATORE|RESULT[37]~_emulated" and latch "SUB_ADDER:SOMMATORE|RESULT[37]~latch"
+    Warning (13310): Register "SUB_ADDER:SOMMATORE|RESULT[38]" is converted into an equivalent circuit using register "SUB_ADDER:SOMMATORE|RESULT[38]~_emulated" and latch "SUB_ADDER:SOMMATORE|RESULT[38]~latch"
+Info: Generating hard_block partition "hard_block:auto_generated_inst"
+Info: Implemented 314 device resources after synthesis - the final resource count might be different
+    Info: Implemented 80 input pins
+    Info: Implemented 39 output pins
+    Info: Implemented 195 logic cells
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 43 warnings
+    Info: Peak virtual memory: 305 megabytes
+    Info: Processing ended: Wed Dec 30 16:07:41 2020
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
+
+

@@ -1,0 +1,30 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE ieee.numeric_std.all; 
+
+ENTITY REG_STATUS IS 
+
+PORT ( CLK,set,enable1,enable2,enable3 : IN std_logic;
+       PROGRESS: OUT std_logic);
+END  REG_STATUS;
+
+ARCHITECTURE BEHAV OF REG_STATUS IS 
+
+COMPONENT FlipFlop_status IS 
+PORT (D, CLK,set,enable : IN std_logic;
+       Q: OUT std_logic);
+END  COMPONENT;
+
+
+SIGNAL Q_OUT : std_logic_vector(2 downto 0);
+
+BEGIN
+
+ff1: FlipFlop_status PORT MAP(CLK=>CLK,set=>set,enable=>enable1,Q=>Q_OUT(0),D=> enable1);
+ff2: FlipFlop_status PORT MAP(CLK=>CLK,set=>set,enable=>enable2,Q=>Q_OUT(1),D=> enable2);
+ff3: FlipFlop_status PORT MAP(CLK=>CLK,set=>set,enable=>enable3,Q=>Q_OUT(2),D=> enable3);
+
+
+PROGRESS<= Q_OUT(0) OR Q_OUT(1) OR Q_OUT(2);
+
+end behav;

@@ -1,0 +1,30 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE ieee.numeric_std.all; 
+
+ENTITY PLA_TOP IS 
+PORT( START,PROGRESS,FREE_M,END_BF,SEQ: IN std_logic;
+      BIT0_IN,BIT1_IN: IN std_logic;
+		CC: IN std_logic_vector(1 downto 0);
+		BIT0_OUT,BIT1_OUT: OUT std_logic);
+END PLA_TOP;
+
+ARCHITECTURE behav OF PLA_TOP IS 
+
+COMPONENT MUX_2to1 IS 
+PORT( A,B,SEL : IN std_logic;
+		OUTPUT: OUT std_logic);
+END COMPONENT;
+
+SIGNAL LOGICA_0,LOGICA_1,NEW_FREE_M : std_logic;
+
+BEGIN 
+
+NEW_FREE_M <= FREE_M AND SEQ;
+
+LOGICA_0 <= START OR (NOT(NEW_FREE_M) AND END_BF) OR (NOT(NEW_FREE_M) AND PROGRESS) ;	-- C + A' * B + A' * D
+LOGICA_1 <= (NOT(NEW_FREE_M) AND NOT(END_BF)) OR (NEW_FREE_M AND END_BF);					-- A' * B' + A * B
+
+mux0: MUX_2to1 PORT MAP( A=> BIT0_IN, B=> LOGICA_0, SEL=> CC(0),  OUTPUT=> BIT0_OUT);
+mux1: MUX_2to1 PORT MAP( A=> BIT1_IN, B=> LOGICA_1, SEL=> CC(1),  OUTPUT=> BIT1_OUT);
+END behav;

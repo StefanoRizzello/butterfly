@@ -1,0 +1,25 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE ieee.numeric_std.all; 
+
+ENTITY MUX39SUM IS 
+PORT( A: IN SIGNED (19 downto 0);
+		B: IN SIGNED(38 downto 0);
+		SEL : IN std_logic;
+		OUTPUT: OUT SIGNED(38 downto 0));
+END MUX39SUM;
+
+ARCHITECTURE behav OF MUX39SUM IS 
+SIGNAL sign_ext : SIGNED(18 DOWNTO 0);
+SIGNAL new_a : SIGNED (38 DOWNTO 0);
+BEGIN
+sign_ext <=(others=> A(19));
+new_a(38 downto 20)<= sign_ext;
+new_a(19 downto 0) <= A;
+with SEL  select
+    OUTPUT <= new_a when '0',
+				  B when '1',
+					
+         "000000000000000000000000000000000000000"  when others;
+end Behav;
+

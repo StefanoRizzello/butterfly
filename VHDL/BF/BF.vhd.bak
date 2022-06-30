@@ -1,0 +1,14 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE ieee.numeric_std.all; 
+
+ENTITY RF IS
+
+PORT ( CLK, ENABLE: IN std_logic;
+       AI,AR,BI,BR,WR,WI: IN SIGNED(19 downto 0); -- va cambiato il formato e conversioni
+      SEL3,SEL1 : IN std_logic;
+		SEL2 : IN std_logic_vector(1 downto 0);
+		OUT_MUX1,OUT_MUX2,OUT_MUX3,AI_CTRL,AR_CTRL,BI_CTRL,BR_CTRL: OUT SIGNED(19 downto 0));
+END RF;
+
+ARCHITECTURE BEHAV OF RF IS 

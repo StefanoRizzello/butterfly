@@ -1,0 +1,28 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE ieee.numeric_std.all; 
+
+ENTITY MOLTI IS
+
+PORT ( CLK,C: IN std_logic;
+       ADD1,ADD2: IN std_logic_vector(19 downto 0);
+       RESULT: OUT std_logic_vector(38 downto 0));
+END MOLTI;
+
+ARCHITECTURE behav OF MOLTI IS
+ 
+BEGIN 
+
+PROCESS(C)
+
+BEGIN 
+
+		IF (C= '0') THEN 
+		RESULT <= ADD1 * ADD2;
+		END IF;
+		IF (C = '1') THEN 
+		RESULT <= ADD *2;
+		END IF;
+		END PROCESS;
+		
+END behav;

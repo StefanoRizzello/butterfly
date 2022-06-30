@@ -1,0 +1,53 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE ieee.numeric_std.all; 
+
+ENTITY RF IS
+
+PORT ( CLK, ENABLE: IN std_logic;
+       AI,AR,BI,BR,WR,WI: IN std_logic_vector(19 downto 0); -- va cambiato il formato e conversioni
+      SEL3,SEL1 : IN std_logic;
+		SEL2 : IN std_logic_vector(1 downto 0);
+		OUT_MUX1,OUT_MUX2,OUT_MUX3,AI_CTRL,AR_CTRL,BI_CTRL,BR_CTRL: OUT std_logic_vector(19 downto 0));
+END RF;
+
+ARCHITECTURE BEHAV OF RF IS 
+
+COMPONENT REG_BF_W IS
+PORT ( CLK: IN std_logic;
+       D: IN std_logic_vector(19 downto 0); -- va cambiato il formato e conversioni
+       Q: OUT std_logic_vector(19 downto 0));
+END COMPONENT;
+
+COMPONENT REG_BF_AB IS
+PORT ( CLK, ENABLE: IN std_logic;
+       D: IN std_logic_vector(19 downto 0); -- va cambiato il formato e conversioni
+       Q: OUT std_logic_vector(19 downto 0));
+END COMPONENT;
+
+COMPONENT MUX_20to1_RF IS 
+PORT( A,B: IN std_logic_vector(19 downto 0);
+		SEL : IN std_logic;
+		OUTPUT: OUT std_logic_vector(19 downto 0));
+END COMPONENT;
+
+COMPONENT MUX_4_RF IS 
+PORT( AR,AI,BR,BI: IN std_logic_vector(19 downto 0);
+		SEL : IN std_logic_vector(1 downto 0);
+		OUTPUT: OUT std_logic_vector(19 downto 0));
+END COMPONENT;
+
+SIGNAL ARQ,AIQ,BRQ,BIQ,WRQ,WIQ 
+
+BEGIN
+MUX_2BA : MUX_4_RF PORT MAP(AR=>ARQ,AI =>AIQ,BR=>BRQ,BI=>BIQ,SEL=>SEL2,OUTPUT=>MUX2_OUT);
+MUX_3W : MUX_20to1_RF PORT MAP (A=>WRQ,B=>WIQ,SEL=>SEL3,OUTPUT=>MUX3_OUT);
+MUX_1A : MUX_20to1_RF PORT MAP (A=>ARQ,B=>AIQ,SEL=>SEL3,OUTPUT=>MUX1_OUT);
+R_AR : REG_BF_AB PORT MAP (CLK=>CLK,ENABLE=>ENABLE,D=>AR,Q=>ARQ);
+R_AI : REG_BF_AB PORT MAP (CLK=>CLK,ENABLE=>ENABLE,D=>AI,Q=>AIQ);
+R_BR : REG_BF_AB PORT MAP (CLK=>CLK,ENABLE=>ENABLE,D=>BR,Q=>BRQ);
+R_BI : REG_BF_AB PORT MAP (CLK=>CLK,ENABLE=>ENABLE,D=>BI,Q=>BIQ);
+R_WR : REG_BF_W  PORT MAP (CLK=>CLK,D=>WR,Q=>WRQ);
+R_WI : REG_BF_W  PORT MAP (CLK=>CLK,D=>WI,Q=>WIQ);
+
+END BEHAV;

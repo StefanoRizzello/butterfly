@@ -1,0 +1,104 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2011 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II
+# Version 11.0 Build 208 07/03/2011 Service Pack 1 SJ Web Edition
+# Date created = 16:18:51  January 02, 2021
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		FFT_16_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone IV E"
+set_global_assignment -name DEVICE Auto
+set_global_assignment -name TOP_LEVEL_ENTITY FFT_16
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION "11.0 SP1"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "16:18:51  JANUARY 02, 2021"
+set_global_assignment -name LAST_QUARTUS_VERSION "20.1.1 Lite Edition"
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
+set_global_assignment -name VHDL_FILE ../REG_STATUS/REG_STATUS.vhd
+set_global_assignment -name VHDL_FILE ../REG_STATUS/FlipFlop_status.vhd
+set_global_assignment -name VHDL_FILE ../CU_TOP/uROM_TOP.vhd
+set_global_assignment -name VHDL_FILE ../CU_TOP/REG_TOP.vhd
+set_global_assignment -name VHDL_FILE ../CU_TOP/REG_PS_TOP.vhd
+set_global_assignment -name VHDL_FILE ../CU_TOP/PLA_TOP.vhd
+set_global_assignment -name VHDL_FILE ../CU_TOP/mux2to1.vhd
+set_global_assignment -name VHDL_FILE ../CU_TOP/MUX_12to1_TOP.vhd
+set_global_assignment -name VHDL_FILE ../CU_TOP/CU_TOP_tb.vhd
+set_global_assignment -name VHDL_FILE ../CU_TOP/CU_TOP.vhd
+set_global_assignment -name VHDL_FILE ../CU_BF_modificata/uROM.vhd
+set_global_assignment -name VHDL_FILE ../CU_BF_modificata/REG_PS_BF.vhd
+set_global_assignment -name VHDL_FILE ../CU_BF_modificata/REG_BF.vhd
+set_global_assignment -name VHDL_FILE ../CU_BF_modificata/PLA_BF.vhd
+set_global_assignment -name VHDL_FILE ../CU_BF_modificata/mux20to1.vhd
+set_global_assignment -name VHDL_FILE ../CU_BF_modificata/mux2to1.vhd
+set_global_assignment -name VHDL_FILE ../CU_BF_modificata/CU_BF_tb.vhd
+set_global_assignment -name VHDL_FILE ../CU_BF_modificata/CU_BF.vhd
+set_global_assignment -name VHDL_FILE ../BF/MUX_INV.vhd
+set_global_assignment -name VHDL_FILE ../SUM/SUM.vhd
+set_global_assignment -name VHDL_FILE ../SUM/SUB_ADDER.vhd
+set_global_assignment -name VHDL_FILE ../SUM/REG_SUM.vhd
+set_global_assignment -name VHDL_FILE ../RF/RF.vhd
+set_global_assignment -name VHDL_FILE ../RF/REG_BF_W.vhd
+set_global_assignment -name VHDL_FILE ../RF/REG_BF_AB.vhd
+set_global_assignment -name VHDL_FILE ../RF/MUX_20to1_RF.vhd
+set_global_assignment -name VHDL_FILE ../RF/MUX_4_RF.vhd
+set_global_assignment -name VHDL_FILE ../MOL/REG_MOL.vhd
+set_global_assignment -name VHDL_FILE ../MOL/MOLTI.vhd
+set_global_assignment -name VHDL_FILE ../MOL/MOL.vhd
+set_global_assignment -name VHDL_FILE ../XOR_CHECK/XOR_PORT.vhd
+set_global_assignment -name VHDL_FILE ../XOR_CHECK/XOR_CHECK.vhd
+set_global_assignment -name VHDL_FILE ../XOR_CHECK/OR_32.vhd
+set_global_assignment -name VHDL_FILE ../OR_PORT/OR_PORT.vhd
+set_global_assignment -name VHDL_FILE ../BF/ROUNDING.vhd
+set_global_assignment -name VHDL_FILE ../BF/REG_ROUND.vhd
+set_global_assignment -name VHDL_FILE ../BF/REG_B1R.vhd
+set_global_assignment -name VHDL_FILE ../BF/REG_B1I.vhd
+set_global_assignment -name VHDL_FILE ../BF/REG_A1R.vhd
+set_global_assignment -name VHDL_FILE ../BF/REG_A1I.vhd
+set_global_assignment -name VHDL_FILE ../BF/REG_39.vhd
+set_global_assignment -name VHDL_FILE ../BF/MUX39SUM.vhd
+set_global_assignment -name VHDL_FILE ../BF/BF.vhd
+set_global_assignment -name VHDL_FILE FFT_16.vhd
+set_global_assignment -name VHDL_FILE R_STONE_0.vhd
+set_global_assignment -name VHDL_FILE R_STONE_1.vhd
+set_global_assignment -name VHDL_FILE R_STONE_3.vhd
+set_global_assignment -name VHDL_FILE R_STONE_7.vhd
+set_global_assignment -name VHDL_FILE R_STONE_9.vhd
+set_global_assignment -name VHDL_FILE ../start_sense/start_sense.vhd
+set_global_assignment -name VHDL_FILE FFT_16_tb.vhd
+set_global_assignment -name VHDL_FILE FF_SEQ.vhd
+set_global_assignment -name VHDL_FILE REG_SEQ.vhd
+set_global_assignment -name VHDL_FILE GUARD.vhd
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VHDL_FILE ../BF/REG_40.vhd
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
